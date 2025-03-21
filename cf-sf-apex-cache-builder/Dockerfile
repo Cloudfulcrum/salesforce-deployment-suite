@@ -20,5 +20,6 @@ COPY sfdxlean.jar /app/sfdxlean.jar
 COPY entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
+
 # Set default command
 ENTRYPOINT ["/app/entrypoint.sh"]

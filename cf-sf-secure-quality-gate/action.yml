@@ -1,0 +1,24 @@
+name: "cf-sf-secure-quality-gate"
+description: "Runs a security scan and fails if there are security issues in the delta changes"
+author: "CloudFulcrum"
+
+inputs:
+  sf_metadatapath:
+    description: "To scan security issues"
+    required: true
+
+  sf_scareportpath:
+    description: "To store scan results"
+    required: true
+
+  sf_reporttype:
+    description: "To store scan results in the specified type"
+    required: true
+    default:
+branding:
+  icon: "upload-cloud"
+  color: "blue"
+
+runs:
+  using: "docker"
+  image: "./sfdx-deploy/Dockerfile"

@@ -1,0 +1,28 @@
+name: "cf-sf-lean-packager"
+description: "Create a metadata package with Lean & Delta changes"
+author: "CloudFulcrum"
+
+inputs:
+  workspace:
+    description: "GitHub workspace path"
+    required: true
+    default: "${{github.workspace}}"
+  before_sha:
+    description: "Previous commit SHA"
+    required: true
+    default: "${{github.event.before}}"
+  current_sha:
+    description: "Current commit SHA"
+    required: true
+    default: "${{github.sha}}"
+  package_dir:
+    description: "SF App directory (e.g., force-app)"
+    required: true
+    default: "force-app"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
+branding:
+  icon: "package"
+  color: "blue"

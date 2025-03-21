@@ -1,0 +1,22 @@
+name: "cf-sf-apex-cache-builder"
+description: "Creates an Apex Test Dependency Cache for optimized testing"
+author: "CloudFulcrum"
+
+inputs:
+  sf_url:
+    description: "Salesforce instance URL"
+    required: true
+  sf_username:
+    description: "Salesforce username"
+    required: true
+  sf_password:
+    description: "Salesforce password"
+    required: true
+
+branding:
+  icon: "upload-cloud"
+  color: "blue"
+
+runs:
+  using: "docker"
+  image: "./sfdx-deploy/Dockerfile"
